@@ -1,6 +1,16 @@
 from math import sqrt
 from collections import defaultdict
 
+
+"""
+ Inspired by Djkistra's shortest path algorithm, 
+ this program takes in the cities along with their distances ('edges') 
+ and delivers the shortest path from any vertex.
+"""
+
+
+
+# first we need to define the key coordinates - i.e. have a 'anchor' for each city to better traverse them
 def key_coordinates(coordinates):
     count=0
     for coordinate in coordinates:
@@ -8,11 +18,12 @@ def key_coordinates(coordinates):
         coordinate.append(count)
     return coordinates
 
+# simple metric to calculate distance via coordinate geometry
 def distances_cities(x1, y1, x2, y2):
     distance = sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
     return distance
 
-
+# creating the graph
 def create_graph(c):
     coordinates = key_coordinates(c)
     graph = defaultdict(list)
@@ -28,12 +39,8 @@ def create_graph(c):
                 distances[current[2], next[2]] = flight_dis
     return coordinates, distances
 
+# the main logic behind the modified Djikstra algorithm
 
-"""
- Inspired by Djkistra's shortest path algorithm, 
- this function takes in the cities along with their distances ('edges') 
- and delivers the shortest path from any vertex.
-"""
 def shortest_flight_path(cities, edges, start):
     next_city = 0
     unvisited = []

@@ -59,7 +59,7 @@ def filter_pronounciable(subs):
 
 
 # main program for execution
-if __name__=="__main__":
+def driver_code():
     str = input("Enter your word=> ")
     all_subs = get_all_subs(str)
     #print("\nALL SUBSEQUENCES ARE: {}".format(all_subs))
@@ -68,3 +68,5 @@ if __name__=="__main__":
 
     print("\n{}: ".format(str))
     print(*result, sep=", ")
+
+driver_code()
