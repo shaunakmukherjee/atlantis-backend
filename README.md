@@ -17,5 +17,3 @@ enough.
 - Code has been commented heavily for reference, with further tweaks/techniques mentioned (like in `pronounciable.py` where I tried to come up
 with a coherent set of 'rules' for judging whether a word is pronounciable or not)
 
-
-## Lastly, this has been a blast to do. Cheers, Atlantis :)
